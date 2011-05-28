@@ -1,0 +1,6 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+test_ruby_hidapi.rb
+usb_constants.rb

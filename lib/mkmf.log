@@ -1,0 +1,48 @@
+find_header: checking for hidapi/hidapi.h in /usr/local/include... -------------------- yes
+
+"gcc -o conftest -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/x86_64-darwin10.4.0 -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/ruby/backward -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long  -fno-common -pipe conftest.c  -L. -L/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/lib -L. -L/usr/local/lib     -lruby.1.9.1-static  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/x86_64-darwin10.4.0 -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/ruby/backward -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <hidapi/hidapi.h>
+/* end */
+
+--------------------
+
+find_library: checking for hid_enumerate() in -lhidapi... -------------------- yes
+
+"gcc -o conftest -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/x86_64-darwin10.4.0 -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/ruby/backward -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long  -fno-common -pipe conftest.c  -L. -L/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/lib -L. -L/usr/local/lib     -lruby.1.9.1-static -lhidapi  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘hid_enumerate’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))hid_enumerate; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/x86_64-darwin10.4.0 -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1/ruby/backward -I/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long  -fno-common -pipe conftest.c  -L. -L/Users/ozone1015/.rvm/rubies/ruby-1.9.2-p0/lib -L. -L/usr/local/lib     -lruby.1.9.1-static -lhidapi  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { hid_enumerate(); return 0; }
+/* end */
+
+--------------------
+

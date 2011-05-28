@@ -1,0 +1,3 @@
+g++ -dynamiclib -undefined suppress -flat_namespace -framework IOKit -framework CoreFoundation *.o -o libhidapi.dylib
+
+" CFLAGS="-arch i386 -arch x86_64 -arch ppc" --enable-static --disable-shared --disable-dependency-tracking

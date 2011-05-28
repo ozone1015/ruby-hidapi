@@ -1,0 +1,3 @@
+module RubyHidapi
+  VERSION = "0.0.1"
+end
